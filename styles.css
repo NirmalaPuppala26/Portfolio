@@ -146,10 +146,25 @@ border-bottom: 1px solid rgba(0,0,0,1);
     background-color: var(--base-800);
   }
 }
+
+h1{
+  font: size 64px;
+  line-height: 1;
+  margin-bottom: 10px;
+  small{
+    display: block;
+    font-weight: 100;
+  }
+  @media (max-width:1024px) {
+    font-size: 48px;
+  }
+}
+
 &.white{
   background-color: white;
   color: var(--base-800);
   &:hover{
+    background-color: var(--base-100);
     color: var(--blue-800);
   }
 }
@@ -157,13 +172,16 @@ border-bottom: 1px solid rgba(0,0,0,1);
   background-color: black;
   color: white;
   &:hover{
-    color: var(--blue-800);
+    background-color:var(--base) ;
+    color: var(--base-100);
   }
 }
 .hero{
 
   display: flex;
-  margin-top: 30px;
+  @media (max-width:1024px) {
+    flex-direction: column;  
+  }
   .hero-blue{
     flex: 1;
     background-color:var(--blue-100) ;
@@ -172,10 +190,30 @@ border-bottom: 1px solid rgba(0,0,0,1);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    span{
+      @media (max-width:1024px) {
+        display: none;
+      }
+    }
+    .call-to-action{
+      margin-top: 20px;
+      margin-bottom: 10px;
+      a {
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+    }
+    .social-links{
+      a{
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
   }
   .hero-yellow{
     flex: 1;
-    background-color: #FAFA33;
+    background-color:black;
     border-radius: 30px;
     padding: 0px 30px;
     display: flex;
@@ -189,4 +227,58 @@ border-bottom: 1px solid rgba(0,0,0,1);
   }
 }
 
+.logos{
+  background-color:var(--base-100);
+  border-radius: 30px;
+  padding: 30px 0px;
+  @media (max-width:1024px) {
+    border-radius: 0px;
+  }
+  .marquee{
+    width: 100vw;
+    max-width: 100%;
+    height: 128px;
+    overflow: hidden;
+    position: relative;
+    .track{
+      position: absolute;
+      white-space: nowrap;
+      will-change: transform;
+      animation: marquee 40s linear infinite;
+      display: flex;
+      gap: 10px; 
+    }
+  }
+}
 
+@keyframes marquee {
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(-50%);
+  }
+}
+
+h2{
+  small{
+    display: block;
+    font-weight: 100;
+    font: size 0.5cm; ;
+  }
+}
+
+.skills{
+  .holder-blue{
+    background-color: var(--blue-100);
+    border-radius: 30px;
+    padding: 30px;
+    display: flex;
+    .left-column{
+      flex: 1;
+    }
+    .right-column{
+      flex: 1;
+    }
+  }
+}
