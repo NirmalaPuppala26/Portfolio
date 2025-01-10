@@ -332,7 +332,7 @@ h3{
     article{
       background-color: var(--yellow-100);
       padding: 30px;
-      border-radius: 30;
+      border-radius: 30px;
       flex: 1;
       h3{
         margin-top: 20px;
@@ -351,13 +351,14 @@ h3{
         padding-top: 56.25%;
         overflow: hidden;
         position: relative;
-        border: radius 15px;
+        border-radius: 15px;
         img{
           position: absolute;
           top: 0;
           left: 0;
           height: 100%;
           object-fit: cover;
+          transition: ease 3s all;
         }
         figcaption {
           position: absolute;
@@ -366,7 +367,7 @@ h3{
           right: 0;
           background-color: rgba(0,0,0,0.5);
           color: var(--base-100);
-          text-align: 10px;
+          text-align: center;
           padding: 10px;
           opacity: 0;
           visibility: hidden;
@@ -379,7 +380,7 @@ h3{
             visibility: visible;
           }
           img{
-
+            transform:scale(1.2);
           }
         }
       }
